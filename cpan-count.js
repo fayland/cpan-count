@@ -28,8 +28,12 @@ count = function(user) {
       return deferred.reject(error || body);
     } else {
       cpan = JSON.parse(body);
-      count = cpan.release.hits.total || 0;
-      return deferred.resolve(count);
+      if (cpan.code && cpan.code === 404) {
+        return deferred.reject(cpan.message);
+      } else {
+        count = cpan.release.hits.total || 0;
+        return deferred.resolve(count);
+      }
     }
   };
   fetch();

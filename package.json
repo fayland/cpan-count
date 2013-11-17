@@ -1,0 +1,41 @@
+{
+  "name": "cpan-count",
+  "version": "0.0.1",
+  "description": "Fetch a user's CPAN count from MetaCPAN",
+  "main": "cpan-count.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/nodeunit test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fayland/cpan-count.git"
+  },
+  "keywords": [
+    "perl",
+    "cpan",
+    "user",
+    "contribute",
+    "contribution",
+    "repo",
+    "repository",
+    "number",
+    "module",
+    "author"
+  ],
+  "author": "Fayland Lam <fayland@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fayland/cpan-count/issues"
+  },
+  "dependencies": {
+    "github": "~0.1.12",
+    "when": "~2.6.0",
+    "request": "~2.27.0"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.2"
+  }
+}

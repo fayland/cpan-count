@@ -31,8 +31,12 @@ count = (user) ->
 		else
 
 			cpan = JSON.parse body
-			count = cpan.release.hits.total or 0
-			deferred.resolve count
+
+			if cpan.code and cpan.code == 404
+				deferred.reject cpan.message
+			else
+				count = cpan.release.hits.total or 0
+				deferred.resolve count
 
 	# do it!
 	fetch()
